@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-viewtrains',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewtrainsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) {
+    this.fetchData()
+   }
+
+
+  fetchData=()=>{
+    this.myapi.viewTrains().subscribe(
+      (data)=>{
+        this.trainsData=data
+      }
+    )
+  }
 
   trainsData:any={}
 
