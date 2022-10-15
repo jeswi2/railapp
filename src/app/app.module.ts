@@ -6,23 +6,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewtrainsComponent } from './viewtrains/viewtrains.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdddataComponent } from './adddata/adddata.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes:Routes=[
   {
     path:"",component:ViewtrainsComponent
+  },
+  {
+path:"add",component:AdddataComponent
   }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewtrainsComponent
+    ViewtrainsComponent,
+    AdddataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     
   ],
   providers: [],
